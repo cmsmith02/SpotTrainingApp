@@ -114,6 +114,10 @@ extension ContentView {
             }
 
             do {
+                #if os(iOS)
+                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+                try AVAudioSession.sharedInstance().setActive(true)
+                #endif
                 player = try AVAudioPlayer(contentsOf: url)
                 player?.play()
             } catch {
