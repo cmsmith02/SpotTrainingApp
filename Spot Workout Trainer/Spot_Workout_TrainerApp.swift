@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+
 #if os(macOS)
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
@@ -22,6 +23,7 @@ struct Spot_Workout_TrainerApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+            .preferredColorScheme(.dark)
         }
     }
 }
